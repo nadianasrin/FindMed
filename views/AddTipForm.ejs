@@ -1,0 +1,31 @@
+<%- include('partials/Nav'); -%>
+
+<!-- show message/warning  -->
+<% if(locals.messages.info){ %> 
+  <%- include('partials/messages',{info: locals.messages.info, bg: "blue lighten-4"}); -%>
+<% } %>
+
+
+<div class="container">
+  <div style="display: flex; justify-content: center; align-items: center;height: 80vh;">
+    <div style="width: 67%;padding: 20px;background: aliceblue; box-shadow: 0px 5px 10px #69696940;" id="tip-form">
+      <h5 class="left-align" style="font-weight: 600; color: #3333339f; margin-bottom: 40px;">Add a new Tips</h5>
+      <form action="/tips/add" method="post">
+        <div class="input-field" style="margin: 20px 0px;">
+          <input id="title" type="text" class="validate" style="font-size: 22px;" name="title" required max="50">
+          <label for="title">Title....</label>
+        </div>
+        <div class="input-field" style="margin: 20px 0px;">
+          <textarea name="desc" style="padding:10px;border: 2px solid #5a5a5aab;min-height: 200px;" placeholder="Tips Description goes here" required></textarea>
+          <!-- <textarea id="textarea1" class="materialize-textarea" name="desc" style="min-height:110px;max-height: 200px !important;" required></textarea>
+          <label for="textarea1">Tips Description...</label> -->
+        </div>
+        <div class="" style="display: flex;justify-content: center; margin-top: 35px;">
+          <button class="btn waves-effect waves-light red lighten-1 btn-large" type="submit" style="font-size: 20px;">Submit
+            <i class="material-icons right">cloud_upload</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

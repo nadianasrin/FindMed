@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="/images/med.png">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4" style="font-size: 17px;"><%= med.name.slice(0,15) %><i class="material-icons right">more_vert</i></span>
+    <p><span style="font-weight: bold;">Price : </span><span style="padding-left: 10px;"><%=med.price%></span> </p>
+    <p><span style="font-weight: bold;">group :</span><span style="padding-left: 10px"><%=med.groupName%></span> </p>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+    <p><span style="font-weight: bold;">Name :</span><span style=" padding-left: 10px"><%=med.name%></span> </p>
+    <p><span style="font-weight: bold;">Company :</span><span style="padding-left: 10px"><%=med.company%></span> </p>
+    <p><span style="font-weight: bold;">Description :</span><span style="padding-left: 10px; font-size: 13px;"><%=med.desc%></span> </p>
+  </div>
+</div>

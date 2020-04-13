@@ -1,0 +1,43 @@
+<%- include('partials/Nav'); -%>
+
+<!-- show message/warning  -->
+<% if(locals.messages.info){ %> 
+  <%- include('partials/messages',{info: locals.messages.info, bg: "blue lighten-4"}); -%>
+<% } %>
+
+
+
+<div class="container">
+  <div style="display: flex; justify-content: center; align-items: center;min-height: 80vh;">
+    <div style="width: 67%;padding: 20px;background: aliceblue; box-shadow: 0px 5px 10px #69696940;" id="med-form">
+      <h5 class="left-align" style="font-weight: 600; color: #3333339f; margin-bottom: 40px;">Add a new Medicine</h5>
+      <form action="/meds/add" method="post">
+        <div class="input-field" style="margin: 20px 0px;">
+          <input id="name" type="text" class="validate" style="font-size: 22px;" name="name">
+          <label for="name">Medicine Name</label>
+        </div>
+        <div class="input-field">
+          <input id="groupName" type="text" class="validate" name="groupName">
+          <label for="groupName">Group name</label>
+        </div>
+        <div class="input-field">
+          <input id="company" type="text" class="validate" name="company">
+          <label for="company">company</label>
+        </div>
+        <div class="input-field">
+          <input id="desc" type="text" class="validate" name="desc">
+          <label for="desc">Description</label>
+        </div>
+        <div class="input-field">
+          <input id="price" type="number" class="validate" name="price">
+          <label for="price">Price</label>
+        </div>
+        <div class="" style="display: flex;justify-content: center; margin-top: 35px;">
+          <button class="btn waves-effect waves-light red lighten-1 btn-large" type="submit" style="font-size: 20px;">Submit
+            <i class="material-icons right">cloud_upload</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

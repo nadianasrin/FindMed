@@ -1,0 +1,29 @@
+<%- include('partials/Nav'); -%>
+
+<!-- show message/warning  -->
+<% if(message.length > 0){ %> 
+  <%- include('partials/messages',{info: message, bg: "red accent-1"}); -%>
+<% } %>
+
+<div class="container">
+  <div style="display: flex; justify-content: center; align-items: center;height: 60vh;">
+    <div style="width: 67%;padding: 20px;background: aliceblue; box-shadow: 0px 5px 10px #69696940;">
+      <h5 class="left-align" style="font-weight: 600; color: #3333339f; margin-bottom: 40px;">Login here</h5>
+      <form action="/auth/login" method="post">
+        <div class="input-field" style="margin: 20px 0px;">
+          <input id="email" type="email" class="validate" style="font-size: 22px;" name="email">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field">
+          <input id="password" type="password" class="validate" name="password">
+          <label for="password">Password</label>
+        </div>
+        <div class="" style="display: flex;justify-content: center; margin-top: 35px;">
+          <button class="btn waves-effect waves-light btn-large" type="submit" style="font-size: 20px;">Login
+            <i class="material-icons right">arrow_forward</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

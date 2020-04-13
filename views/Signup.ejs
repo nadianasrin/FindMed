@@ -1,0 +1,51 @@
+<%- include('partials/Nav'); -%>
+
+<!-- show message/warning  -->
+<% if(locals.messages.message){ %> 
+  <%- include('partials/messages',{info: locals.messages.message, bg: "red accent-1"}); -%>
+<% } %>
+
+
+<div class="form-wrapper row" style="padding: 50px; min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;">
+  <div class="col s12">
+    <div class="container">
+      <div class="container">
+        <h5 style="margin-bottom: 10px; text-align: center;">Sign Up (doctor)</h5>
+        <form action="/auth/signup" method="post">
+          <div class="input-field col s12 m6">
+            <input id="name" type="text" class="validate" name="name">
+            <label for="name">User Name</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="email" type="email" class="validate" name="email">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="password" type="password" class="validate" name="password">
+            <label for="password">Password</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="licenceNo" type="text" class="validate" name="licenceNo">
+            <label for="licenceNo">Licence Number</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="degree" type="text" class="validate" name="degree">
+            <label for="degree">Degree</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input id="chamberLocation" type="text" class="validate" name="chamberLocation">
+            <label for="chamberLocation">Chamber Location</label>
+          </div>
+          <div class="col s12" style="display: flex;justify-content: center; margin-top: 10px;">
+            <button class="btn waves-effect waves-light btn" type="submit">Submit
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<%- include("partials/Nav") -%>
+
+<div class="container" style="padding-top: 40px;">
+
+    <div class="row">
+        <div class="col s12 m6 l4" style="margin: 10px 0px">
+            <div class="deep-orange accent-2" style="padding: 10px;">
+                <h4 style="text-align: center;color: #00000085;">MEDICINE</h4>
+                <h3 style="text-align: center;margin-top: 10px;font-weight: bold;"><%= count.numberOfMedicines%></h3>
+            </div>
+        </div>
+        <div class="col s12 m6 l4" style="margin: 10px 0px">
+            <div class=" cyan lighten-2" style="padding: 10px;">
+                <h4 style="text-align: center;color: #00000085;">TIPS</h4>
+                <h3 style="text-align: center;margin-top: 10px;font-weight: bold;"><%= count.numberOfTips%></h3>
+            </div>
+        </div>
+        <div class="col s12 m6 l4" style="margin: 10px 0px">
+            <div class="green accent-2" style="padding: 10px;">
+                <h4 style="text-align: center;color: #00000085;">DOCTOR</h4>
+                <h3 style="text-align: center;margin-top: 10px;font-weight: bold;"><%= count.numberOfUsers%></h3>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 50px;">
+        <h4 style="font-weight: bold;color: #5a5a5ae8;margin-bottom: 17px; font-size: 24px;"> DOCTORS</h4>
+      <table class="highlight centered">
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% users.map(user => { %>
+            <tr>
+                <td><%=user.name%></td>
+                <td><%=user.email%></td>
+                <td><a href="/doc/remove/<%= user._id %>"><i class="material-icons" style="cursor: pointer;font-size: 30px;color: #ee6e73;">delete_forever</i></a></td>
+            </tr>
+          <% }) %>
+        </tbody>
+
+      </table>
+    </div>
+
+</div>

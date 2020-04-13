@@ -1,0 +1,57 @@
+<%-include("partials/Nav")-%>
+
+
+<% if(!doctor) { %>
+  <div class="container">
+    <h3 style="word-spacing: 3px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 5%;
+    color: #ee6e73;
+    font-weight: 600;">User Not Found!</h3>
+  </div>
+<% }else { %>
+  <div class="container" id="profile-wrapper">
+    <h3>PROFILE</h3>
+    <div>
+      <div style="padding-left: 20px;border-left: 6px solid #f4433691;margin-bottom: 10px;">
+        <h5 style="color: #757575;font-weight: 600;"><%=doctor.name%></h5>
+        <h5></h4><%=doctor.email%></h5>
+      </div>
+      <div style="padding-left: 20px;border-left: 6px solid #ff98008f;">
+        <p><span>Licence: </span><%= doctor.licenceNo%></p>
+        <p><span>Degree: </span><%=doctor.degree%></p>
+        <p><span>Chamber Location:</span><%=doctor.chamberLocation%></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="basic-med-wrapper" style="margin-top: 70px;">  
+    <div class="basic-med container">
+      <h4 class="center-align section-heading">All Tips By <%= doctor.name %></h4>
+      <div class="divider"></div>
+      <div class="med-card-wrapper">
+      <% doctor.tips.map(tip => { %>
+        <div class="card white darken-2" id="tip-card">
+          <div class="card-content">
+            <p class="card-title" style="font-weight: bold; color: #424242bf;"><%= tip.title.slice(0,30) %></p>
+            <p class="grey-text darken-2"><%= tip.desc.slice(0,150)%></p>
+            <p class="blue-grey-text text-darken-3" style=" text-align: left; margin-top: 5px"><%= new Date(tip.created_at).toDateString() %>;</p>
+            <a href="/tips/id/<%=tip._id%>" class="waves-effect waves-light btn red lighten-1" style="margin-top: 10px;">Read More</a>
+          </div>
+          <div class="card-action row" >
+            <div class="author-info col s8" style="padding-top: 7px;">
+              <p class="black-text"><%= tip.author.name %></p>
+              <p class="black-text"><%= tip.author.email %></p>
+            </div>
+          </div>
+        </div>
+     <% }) %>
+    </div>
+  </div>
+</div>
+
+<% } %>
+
+
+

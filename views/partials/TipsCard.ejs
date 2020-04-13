@@ -1,0 +1,18 @@
+
+  
+  <div class="card white darken-2" id="tip-card">
+    <div class="card-content">
+      <p class="card-title" style="font-weight: bold; color: #424242bf;font-size: 18px;
+      line-height: 1.2em;"><%= tip.title.slice(0,30) %></p>
+      <p class="grey-text darken-2"><%= tip.desc.slice(0,100)%></p>
+      <p class="blue-grey-text text-darken-3" style=" text-align: left; margin-top: 5px"><%= new Date(tip.created_at).toDateString() %>;</p>
+    </div>
+    <div class="card-action row " >
+      <a href="/tips/id/<%=tip._id%>" class="waves-effect waves-light btn red lighten-1" >Read More</a>
+      <!-- <div class="author-info col s12 " style="margin-bottom: 5px;">
+        <p class="black-text"><%= tip.author.name %></p>
+        <p class="black-text"><%= tip.author.email %></p>
+      </div>
+      <a href="/doc/<%= tip.author._id %>" class="waves-effect waves-light btn-large red lighten-1 col s12" id="profile-button">Profile</a> -->
+    </div>
+  </div>
